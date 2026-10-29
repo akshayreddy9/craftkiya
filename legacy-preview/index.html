@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f3eb">
+  <meta name="description" content="Turn your favorite photograph into a handmade string-art portrait. Made slowly by hand, previewed by you, and crafted to keep.">
+  <meta property="og:title" content="Craftkiya | A little piece of your story, by hand">
+  <meta property="og:description" content="Custom string-art portraits, thoughtfully made from your favorite photographs.">
+  <meta property="og:type" content="website">
+  <title>Craftkiya | Handmade string art, made from your story</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Store",
+    "name":"Craftkiya",
+    "description":"Handmade custom string-art portraits and thoughtful gifts.",
+    "url":"https://craftkiya.com",
+    "priceRange":"₹₹",
+    "currenciesAccepted":"INR",
+    "areaServed":"IN"
+  }
+  </script>
+  <style>
+    :root {
+      --paper: #f6f3eb;
+      --paper-deep: #ebe6da;
+      --ink: #20231f;
+      --muted: #73756d;
+      --line: #dedbd1;
+      --green: #364d3d;
+      --green-dark: #25372c;
+      --clay: #b65f46;
+      --white: #fffefa;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", "Segoe UI", sans-serif;
+      --content: 1240px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); font-size: 15px; line-height: 1.55; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; text-decoration: none; }
+    button { color: inherit; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: min(var(--content), calc(100% - 64px)); margin-inline: auto; }
+    .announcement { background: var(--green-dark); color: #f9f7f0; text-align: center; padding: 9px 16px; font-size: 11px; letter-spacing: .08em; }
+    .announcement strong { color: #e8bc83; font-weight: 600; }
+    .header { height: 82px; display: flex; align-items: center; border-bottom: 1px solid rgba(32,35,31,.1); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; min-width: 190px; }
+    .brand-mark { width: 35px; height: 35px; display: grid; place-items: center; border: 1px solid var(--green); color: var(--green); border-radius: 50%; font-family: var(--serif); font-size: 21px; line-height: 1; }
+    .brand-name { font-family: var(--serif); font-size: 23px; letter-spacing: .01em; }
+    .brand-name span { color: var(--clay); }
+    .nav { display: flex; align-items: center; gap: 34px; font-size: 13px; }
+    .nav a { transition: color .2s ease; }
+    .nav a:hover { color: var(--clay); }
+    .header-actions { display: flex; align-items: center; gap: 18px; }
+    .icon-button { min-width: 39px; min-height: 39px; padding: 8px; border: 0; background: transparent; display: inline-flex; align-items: center; justify-content: center; gap: 7px; cursor: pointer; }
+    .bag-count { display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: var(--green); color: white; font-size: 10px; }
+    .menu-button { display: none; }
+    .hero { padding: 48px 0 64px; }
+    .hero-grid { display: grid; grid-template-columns: .88fr 1.12fr; align-items: center; gap: 64px; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--green); text-transform: uppercase; font-size: 10px; letter-spacing: .18em; font-weight: 700; }
+    .eyebrow::before { content: ""; width: 27px; height: 1px; background: currentColor; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font-family: var(--serif); font-size: clamp(44px, 5.3vw, 72px); font-weight: 500; line-height: 1.06; letter-spacing: -.025em; margin: 22px 0 20px; max-width: 560px; }
+    h1 em { color: var(--clay); font-weight: 500; }
+    .hero-copy { color: #61645d; max-width: 410px; font-size: 15px; line-height: 1.8; margin-bottom: 27px; }
+    .button { border: 1px solid var(--green); background: var(--green); color: white; display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 51px; padding: 0 22px; cursor: pointer; font-size: 12px; font-weight: 600; letter-spacing: .035em; transition: background .2s, color .2s, transform .2s; }
+    .button:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .button-outline { background: transparent; color: var(--green); }
+    .button-outline:hover { background: var(--green); color: white; }
+    .button-clay { border-color: var(--clay); background: var(--clay); }
+    .button-clay:hover { border-color: #9c4e38; background: #9c4e38; }
+    .text-link { border: 0; background: transparent; padding: 5px 0; color: var(--green); font-size: 12px; font-weight: 600; cursor: pointer; border-bottom: 1px solid currentColor; }
+    .hero-links { display: flex; align-items: center; gap: 24px; }
+    .hero-note { display: flex; align-items: center; gap: 9px; margin-top: 30px; color: var(--muted); font-size: 11px; }
+    .stars { color: #ba8053; letter-spacing: 2px; font-size: 12px; }
+    .hero-visual { position: relative; min-height: 500px; }
+    .hero-image { width: 100%; height: 500px; object-fit: cover; object-position: center; }
+    .hero-frame { position: absolute; inset: 14px; border: 1px solid rgba(255,255,255,.55); pointer-events: none; }
+    .hero-stamp { position: absolute; bottom: -19px; left: -24px; width: 155px; height: 155px; border-radius: 50%; background: var(--clay); color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; transform: rotate(-8deg); box-shadow: 0 10px 24px #4d302522; }
+    .hero-stamp strong { font-family: var(--serif); font-size: 26px; font-weight: 500; line-height: 1.1; }
+    .hero-stamp span { margin-top: 5px; font-size: 9px; text-transform: uppercase; letter-spacing: .12em; }
+    .hero-caption { position: absolute; right: 0; top: 28px; padding: 13px 17px; background: var(--white); font-family: var(--serif); font-style: italic; font-size: 14px; box-shadow: 0 5px 20px #00000012; }
+    .trust-row { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 21px 0; }
+    .trust-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .trust-item { display: flex; justify-content: center; align-items: center; gap: 11px; color: #555950; font-size: 11px; }
+    .trust-item b { font-size: 17px; color: var(--green); font-weight: 500; }
+    .section { padding: 94px 0; }
+    .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 37px; }
+    .section-heading h2 { font-family: var(--serif); font-size: 42px; font-weight: 500; letter-spacing: -.02em; line-height: 1.1; margin: 12px 0 0; }
+    .section-heading p { max-width: 340px; margin: 0; color: var(--muted); font-size: 13px; }
+    .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .product-card { min-width: 0; }
+    .product-image-wrap { position: relative; overflow: hidden; background: var(--paper-deep); aspect-ratio: 1 / 1.06; }
+    .product-image { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+    .product-card:hover .product-image { transform: scale(1.035); }
+    .product-label { position: absolute; top: 13px; left: 13px; padding: 7px 10px; background: var(--white); color: var(--green); font-size: 9px; text-transform: uppercase; letter-spacing: .12em; }
+    .quick-add { position: absolute; bottom: 12px; right: 12px; width: 43px; height: 43px; border: 0; border-radius: 50%; background: var(--white); color: var(--green); display: grid; place-items: center; cursor: pointer; font-size: 22px; transition: background .2s, color .2s; }
+    .quick-add:hover { background: var(--green); color: white; }
+    .product-meta { display: flex; align-items: start; justify-content: space-between; gap: 12px; padding: 15px 2px 0; }
+    .product-title { font-family: var(--serif); font-size: 20px; line-height: 1.2; margin-bottom: 5px; }
+    .product-sub { color: var(--muted); font-size: 11px; }
+    .product-price { white-space: nowrap; font-size: 13px; font-weight: 600; }
+    .custom-section { padding: 0 0 100px; }
+    .custom-shell { display: grid; grid-template-columns: .98fr 1.02fr; background: var(--white); }
+    .custom-image-side { position: relative; min-height: 600px; background: #ded4c5; }
+    .custom-image { position: absolute; width: 100%; height: 100%; object-fit: cover; }
+    .custom-image-note { position: absolute; left: 24px; bottom: 24px; background: var(--white); padding: 13px 17px; font-size: 11px; box-shadow: 0 4px 16px #00000014; }
+    .custom-image-note strong { display: block; color: var(--green); margin-bottom: 2px; }
+    .custom-form { padding: 47px clamp(28px, 5vw, 68px); }
+    .custom-form h2 { font-family: var(--serif); font-weight: 500; font-size: 38px; line-height: 1.1; margin: 13px 0 10px; }
+    .form-intro { color: var(--muted); font-size: 12px; margin-bottom: 24px; }
+    .upload-box { min-height: 118px; padding: 17px; border: 1px dashed #a8ad9f; display: flex; justify-content: center; align-items: center; text-align: center; position: relative; cursor: pointer; transition: border-color .2s, background .2s; }
+    .upload-box:hover, .upload-box.dragging { border-color: var(--green); background: #f3f5ef; }
+    .upload-box input { position: absolute; inset: 0; width: 100%; opacity: 0; cursor: pointer; }
+    .upload-icon { margin: 0 auto 5px; color: var(--green); font-size: 23px; }
+    .upload-title { font-size: 12px; font-weight: 600; margin-bottom: 2px; }
+    .upload-help { color: var(--muted); font-size: 10px; }
+    .upload-preview { display: none; width: 48px; height: 48px; object-fit: cover; margin: 0 auto 6px; border-radius: 50%; }
+    .form-label { display: block; margin: 20px 0 9px; font-size: 11px; font-weight: 600; }
+    .option-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .option { min-height: 48px; padding: 7px; background: transparent; border: 1px solid var(--line); text-align: left; cursor: pointer; font-size: 10px; transition: border-color .2s, background .2s; }
+    .option span { display: block; color: var(--muted); font-size: 9px; margin-top: 2px; }
+    .option.selected { border-color: var(--green); background: #f3f5ef; box-shadow: inset 0 0 0 1px var(--green); }
+    .frame-options { grid-template-columns: repeat(3, 1fr); }
+    .frame-option { display: flex; align-items: center; gap: 7px; justify-content: center; }
+    .wood-swatch { width: 14px; height: 14px; border-radius: 50%; border: 1px solid #0002; background: #292a27; }
+    .wood-swatch.teak { background: #845536; }
+    .wood-swatch.pine { background: #c69d6c; }
+    .price-row { display: flex; justify-content: space-between; align-items: center; margin: 24px 0 15px; padding-top: 17px; border-top: 1px solid var(--line); }
+    .price-label { color: var(--muted); font-size: 11px; }
+    .price-value { font-family: var(--serif); font-size: 28px; }
+    .add-button { width: 100%; }
+    .fine-print { text-align: center; color: var(--muted); font-size: 10px; margin: 11px 0 0; }
+    .story-band { background: var(--green); color: white; padding: 72px 0; }
+    .story-grid { display: grid; grid-template-columns: .7fr 1fr; gap: 70px; align-items: center; }
+    .story-number { font-family: var(--serif); color: #d3a278; font-size: 15px; font-style: italic; }
+    .story-band h2 { font-family: var(--serif); font-size: 42px; font-weight: 500; line-height: 1.14; margin: 11px 0 15px; }
+    .story-copy { max-width: 515px; color: #e2e8df; font-size: 13px; line-height: 1.9; }
+    .story-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .story-step { border-top: 1px solid #ffffff55; padding-top: 15px; }
+    .story-step span { color: #d3a278; font-size: 10px; }
+    .story-step h3 { font-family: var(--serif); font-size: 18px; font-weight: 500; margin: 7px 0; }
+    .story-step p { color: #d7ded5; font-size: 10px; line-height: 1.6; margin-bottom: 0; }
+    .reviews { background: #ece9df; }
+    .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .review-card { padding: 25px; background: var(--white); min-height: 205px; display: flex; flex-direction: column; justify-content: space-between; }
+    .review-text { font-family: var(--serif); font-size: 20px; line-height: 1.45; }
+    .review-person { display: flex; justify-content: space-between; gap: 12px; align-items: center; color: var(--muted); font-size: 10px; }
+    .review-person strong { display: block; color: var(--ink); font-size: 11px; font-weight: 600; }
+    .faq-grid { display: grid; grid-template-columns: .7fr 1fr; gap: 80px; }
+    .faq-heading h2 { font-family: var(--serif); font-size: 40px; font-weight: 500; line-height: 1.13; margin: 12px 0; }
+    .faq-heading p { font-size: 12px; color: var(--muted); max-width: 270px; }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 17px 0; background: transparent; border: 0; text-align: left; font-family: var(--serif); font-size: 17px; cursor: pointer; }
+    .faq-question span:last-child { color: var(--green); font-family: var(--sans); font-size: 20px; }
+    .faq-answer { display: none; padding: 0 32px 17px 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
+    .faq-item.open .faq-answer { display: block; }
+    .footer { background: #202720; color: #f1f0e9; padding: 55px 0 24px; }
+    .footer-main { display: grid; grid-template-columns: 1.3fr .8fr .8fr 1.1fr; gap: 40px; padding-bottom: 42px; }
+    .footer .brand-mark { border-color: #bac6b9; color: #e7e9dc; }
+    .footer .brand-name span { color: #d3a278; }
+    .footer-note { color: #b7beb5; max-width: 260px; margin-top: 16px; font-size: 11px; line-height: 1.8; }
+    .footer h3 { color: #d3a278; text-transform: uppercase; letter-spacing: .12em; font-size: 9px; margin-bottom: 14px; }
+    .footer-links { display: grid; gap: 10px; font-size: 11px; color: #e0e2d9; }
+    .newsletter-copy { color: #b7beb5; font-size: 11px; margin-bottom: 13px; }
+    .newsletter-form { display: flex; border-bottom: 1px solid #717a70; }
+    .newsletter-form input { width: 100%; min-width: 0; background: transparent; color: white; border: 0; padding: 10px 0; outline: 0; font-size: 11px; }
+    .newsletter-form button { border: 0; color: #d3a278; background: transparent; cursor: pointer; font-size: 18px; }
+    .footer-bottom { border-top: 1px solid #4b534a; padding-top: 18px; display: flex; justify-content: space-between; color: #aeb5ab; font-size: 9px; }
+    .drawer-backdrop { position: fixed; inset: 0; z-index: 20; background: #1118; opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s; }
+    .drawer-backdrop.open { opacity: 1; visibility: visible; }
+    .cart-drawer { position: absolute; right: 0; top: 0; height: 100%; width: min(440px, 100%); background: var(--paper); transform: translateX(100%); transition: transform .3s ease; display: flex; flex-direction: column; }
+    .drawer-backdrop.open .cart-drawer { transform: translateX(0); }
+    .drawer-head { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); padding: 20px 23px; }
+    .drawer-head h2 { margin: 0; font-family: var(--serif); font-size: 25px; font-weight: 500; }
+    .close-button { border: 0; background: transparent; font-size: 24px; cursor: pointer; }
+    .cart-items { flex: 1; overflow: auto; padding: 12px 23px; }
+    .cart-empty { text-align: center; color: var(--muted); padding: 65px 15px; font-family: var(--serif); font-size: 20px; }
+    .cart-line { display: grid; grid-template-columns: 68px 1fr auto; gap: 13px; padding: 15px 0; border-bottom: 1px solid var(--line); }
+    .cart-thumb { width: 68px; height: 74px; object-fit: cover; background: var(--paper-deep); }
+    .cart-line h3 { font-family: var(--serif); font-size: 16px; font-weight: 500; margin: 2px 0 3px; }
+    .cart-line p { color: var(--muted); font-size: 10px; margin: 0; }
+    .cart-line-price { font-size: 11px; font-weight: 600; }
+    .remove-line { margin-top: 8px; border: 0; padding: 0; background: transparent; color: var(--clay); font-size: 10px; cursor: pointer; }
+    .cart-foot { padding: 20px 23px 24px; border-top: 1px solid var(--line); }
+    .cart-total { display: flex; justify-content: space-between; margin-bottom: 16px; font-size: 12px; }
+    .cart-total strong { font-size: 15px; }
+    .cart-foot .button { width: 100%; }
+    .toast { position: fixed; z-index: 30; bottom: 24px; left: 50%; transform: translate(-50%, 20px); opacity: 0; pointer-events: none; padding: 12px 18px; background: var(--green-dark); color: white; font-size: 12px; box-shadow: 0 8px 26px #0003; transition: .25s ease; }
+    .toast.visible { opacity: 1; transform: translate(-50%, 0); }
+    .mobile-bar { display: none; }
+    @media (max-width: 900px) {
+      .wrap { width: min(var(--content), calc(100% - 42px)); }
+      .nav { gap: 18px; }
+      .hero-grid { gap: 36px; }
+      .hero-visual, .hero-image { min-height: 430px; height: 430px; }
+      .custom-form { padding: 38px 30px; }
+      .custom-image-side { min-height: 640px; }
+      .story-grid { gap: 42px; }
+      .footer-main { gap: 25px; }
+    }
+    @media (max-width: 680px) {
+      body { padding-bottom: 63px; }
+      .wrap { width: calc(100% - 36px); }
+      .announcement { font-size: 9px; padding: 8px 10px; }
+      .header { height: 67px; }
+      .brand { min-width: 0; gap: 7px; }
+      .brand-mark { width: 31px; height: 31px; font-size: 18px; }
+      .brand-name { font-size: 21px; }
+      .nav { display: none; position: absolute; top: 105px; left: 0; right: 0; z-index: 10; padding: 18px; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; }
+      .nav.open { display: flex; }
+      .nav a { padding: 12px 8px; border-bottom: 1px solid var(--line); }
+      .menu-button { display: inline-flex; }
+      .header-actions { gap: 4px; }
+      .hero { padding: 37px 0 44px; }
+      .hero-grid { display: flex; flex-direction: column; align-items: stretch; gap: 29px; }
+      h1 { font-size: 49px; margin: 16px 0 13px; }
+      .hero-copy { font-size: 13px; margin-bottom: 21px; }
+      .hero-visual, .hero-image { min-height: 0; height: auto; aspect-ratio: 1 / 1.02; }
+      .hero-stamp { width: 114px; height: 114px; left: -8px; bottom: -12px; }
+      .hero-stamp strong { font-size: 21px; }
+      .hero-stamp span { font-size: 7px; }
+      .hero-caption { top: 15px; font-size: 11px; padding: 10px 12px; }
+      .trust-row { padding: 17px 0; }
+      .trust-inner { grid-template-columns: repeat(2, 1fr); gap: 14px 5px; }
+      .trust-item { justify-content: flex-start; font-size: 9px; }
+      .trust-item b { font-size: 14px; }
+      .section { padding: 65px 0; }
+      .section-heading { display: block; margin-bottom: 24px; }
+      .section-heading h2 { font-size: 34px; margin-top: 9px; }
+      .section-heading p { margin-top: 10px; font-size: 11px; }
+      .section-heading .text-link { margin-top: 14px; }
+      .product-grid { grid-template-columns: 1fr 1fr; gap: 23px 12px; }
+      .product-grid .product-card:last-child { grid-column: span 2; width: calc(50% - 6px); }
+      .product-image-wrap { aspect-ratio: 1 / 1.1; }
+      .product-title { font-size: 16px; }
+      .product-sub { font-size: 9px; }
+      .product-price { font-size: 11px; }
+      .product-label { font-size: 7px; top: 8px; left: 8px; padding: 6px 7px; }
+      .quick-add { width: 36px; height: 36px; font-size: 19px; right: 8px; bottom: 8px; }
+      .custom-section { padding-bottom: 65px; }
+      .custom-shell { grid-template-columns: 1fr; }
+      .custom-image-side { min-height: 0; aspect-ratio: 1 / .88; }
+      .custom-form { padding: 31px 21px; }
+      .custom-form h2 { font-size: 34px; }
+      .option { font-size: 9px; min-height: 45px; }
+      .option span { font-size: 8px; }
+      .frame-option { gap: 4px; }
+      .wood-swatch { width: 11px; height: 11px; flex: 0 0 auto; }
+      .story-band { padding: 57px 0; }
+      .story-grid { grid-template-columns: 1fr; gap: 28px; }
+      .story-band h2 { font-size: 36px; }
+      .story-steps { gap: 13px; }
+      .story-step h3 { font-size: 15px; }
+      .story-step p { font-size: 9px; }
+      .review-grid { grid-template-columns: 1fr; gap: 11px; }
+      .review-card { min-height: 168px; padding: 21px; }
+      .review-text { font-size: 18px; }
+      .faq-grid { grid-template-columns: 1fr; gap: 16px; }
+      .faq-heading h2 { font-size: 35px; }
+      .faq-heading p { margin-bottom: 0; }
+      .faq-question { font-size: 15px; }
+      .footer { padding-top: 43px; }
+      .footer-main { grid-template-columns: 1fr 1fr; gap: 32px 20px; }
+      .footer-brand-block { grid-column: span 2; }
+      .footer-bottom { gap: 12px; flex-wrap: wrap; font-size: 8px; }
+      .mobile-bar { position: fixed; z-index: 8; bottom: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 9px 17px calc(9px + env(safe-area-inset-bottom)); background: var(--white); border-top: 1px solid var(--line); box-shadow: 0 -5px 20px #1c21160a; }
+      .mobile-price { font-family: var(--serif); font-size: 20px; }
+      .mobile-price small { display: block; color: var(--muted); font-family: var(--sans); font-size: 8px; }
+      .mobile-bar .button { min-height: 43px; padding: 0 16px; font-size: 10px; }
+      .toast { bottom: 77px; white-space: nowrap; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <div class="announcement">A LITTLE SOMETHING, MADE BY HAND <strong>· Complimentary delivery across India</strong></div>
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#home" aria-label="Craftkiya home"><span class="brand-mark">c</span><span class="brand-name">craftkiya<span>.</span></span></a>
+      <nav class="nav" id="siteNav" aria-label="Main navigation"><a href="#collection">The collection</a><a href="#customize">Make it yours</a><a href="#story">Our process</a><a href="#reviews">Kind words</a></nav>
+      <div class="header-actions">
+        <button class="icon-button menu-button" id="menuButton" aria-label="Open menu"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+        <button class="icon-button" id="cartButton" aria-label="Open shopping bag">Bag <span class="bag-count" id="bagCount">0</span></button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div class="hero-copy-block">
+          <div class="eyebrow">A portrait, patiently made</div>
+          <h1>A little piece of your story, <em>by hand.</em></h1>
+          <p class="hero-copy">One photograph. A hundred tiny details. Your favorite people, reimagined in thread and wood by an artisan who takes their time.</p>
+          <div class="hero-links"><a class="button" href="#customize">Create your portrait <span aria-hidden="true">↗</span></a><a class="text-link" href="#collection">Explore the collection</a></div>
+          <div class="hero-note"><span class="stars">★★★★★</span><span>Loved by 1,200+ thoughtful gifters</span></div>
+        </div>
+        <div class="hero-visual">
+          <img class="hero-image" src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1400&q=85" alt="Artist's hands arranging colorful threads and art materials">
+          <div class="hero-frame"></div>
+          <div class="hero-caption">Made slowly. Kept forever.</div>
+          <div class="hero-stamp"><strong>Not just<br>a picture.</strong><span>Your story, in thread</span></div>
+        </div>
+      </div>
+    </section>
+    <section class="trust-row" aria-label="Our promises"><div class="wrap trust-inner"><div class="trust-item"><b>✳</b><span>Handmade, never mass-produced</span></div><div class="trust-item"><b>⌕</b><span>Preview before we make it</span></div><div class="trust-item"><b>♡</b><span>Made for your one-of-a-kind story</span></div><div class="trust-item"><b>↗</b><span>Complimentary India-wide delivery</span></div></div></section>
+    <section class="section" id="collection">
+      <div class="wrap">
+        <div class="section-heading"><div><div class="eyebrow">Made for the moments that matter</div><h2>Find your kind of keepsake.</h2></div><p>Each piece begins with a feeling. Choose a favorite, then make it unmistakably yours.</p></div>
+        <div class="product-grid">
+          <article class="product-card"><div class="product-image-wrap"><img class="product-image" src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=900&q=82" alt="Family enjoying a happy moment together"><span class="product-label">Most loved</span><button class="quick-add" data-configure aria-label="Customize a family portrait">+</button></div><div class="product-meta"><div><div class="product-title">The family portrait</div><div class="product-sub">A whole lot of love, in one frame</div></div><div class="product-price">From ₹4,900</div></div></article>
+          <article class="product-card"><div class="product-image-wrap"><img class="product-image" src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=82" alt="A couple sharing a quiet moment"><span class="product-label">Made for two</span><button class="quick-add" data-configure aria-label="Customize a couple portrait">+</button></div><div class="product-meta"><div><div class="product-title">The two of us</div><div class="product-sub">Your favorite person, always close</div></div><div class="product-price">From ₹4,900</div></div></article>
+          <article class="product-card"><div class="product-image-wrap"><img class="product-image" src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=900&q=82" alt="A warm and thoughtful handmade gift"><span class="product-label">A thoughtful gift</span><button class="quick-add" data-configure aria-label="Customize a portrait gift">+</button></div><div class="product-meta"><div><div class="product-title">The little details</div><div class="product-sub">For the story only you know</div></div><div class="product-price">From ₹4,900</div></div></article>
+        </div>
+      </div>
+    </section>
+    <section class="custom-section" id="customize">
+      <div class="wrap custom-shell">
+        <div class="custom-image-side"><img class="custom-image" id="customImage" src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1100&q=85" alt="Colorful artist studio with thread and handcraft supplies"><div class="custom-image-note"><strong>Your photo stays yours</strong>Only used to create your artwork.</div></div>
+        <div class="custom-form">
+          <div class="eyebrow">A custom portrait, just for you</div>
+          <h2>Start with your favorite photo.</h2>
+          <p class="form-intro">Choose your frame and size. We’ll send you a digital preview for approval before your portrait is made.</p>
+          <label class="upload-box" id="uploadBox">
+            <input id="photoInput" type="file" accept="image/*" aria-label="Choose a reference photo">
+            <div><img class="upload-preview" id="uploadPreview" alt="Your selected reference photo"><div class="upload-icon" aria-hidden="true">↑</div><div class="upload-title" id="uploadTitle">Choose a photo or drop it here</div><div class="upload-help" id="uploadHelp">A clear, well-lit photo works best · JPG, PNG</div></div>
+          </label>
+          <label class="form-label">Choose your frame size</label>
+          <div class="option-row" id="sizeOptions"><button type="button" class="option selected" data-size="12 x 12 in" data-price="4900">12 × 12 in<span>From ₹4,900</span></button><button type="button" class="option" data-size="18 x 18 in" data-price="6900">18 × 18 in<span>From ₹6,900</span></button><button type="button" class="option" data-size="18 x 24 in" data-price="8900">18 × 24 in<span>From ₹8,900</span></button></div>
+          <label class="form-label">Choose a frame finish</label>
+          <div class="option-row frame-options" id="frameOptions"><button type="button" class="option frame-option selected" data-frame="Charcoal"><i class="wood-swatch"></i> Charcoal</button><button type="button" class="option frame-option" data-frame="Warm teak"><i class="wood-swatch teak"></i> Warm teak</button><button type="button" class="option frame-option" data-frame="Natural pine"><i class="wood-swatch pine"></i> Natural pine</button></div>
+          <div class="price-row"><span class="price-label">Your handmade portrait</span><strong class="price-value" id="priceValue">₹4,900</strong></div>
+          <button type="button" class="button button-clay add-button" id="addToBag">Personalize & add to bag <span aria-hidden="true">↗</span></button>
+          <p class="fine-print">Free delivery · Preview approval included · Made by hand in India</p>
+        </div>
+      </div>
+    </section>
+    <section class="story-band" id="story">
+      <div class="wrap story-grid">
+        <div><div class="story-number">A little patience makes a lot of love.</div><h2>From your photo<br>to your forever piece.</h2><p class="story-copy">No two portraits are exactly alike. An artist maps your photograph, then builds every line by hand, winding thread around carefully placed pins until your people appear.</p></div>
+        <div class="story-steps"><div class="story-step"><span>01 / SEND US YOUR PHOTO</span><h3>It starts with you</h3><p>Pick a clear photograph that feels like your people.</p></div><div class="story-step"><span>02 / PREVIEW TOGETHER</span><h3>Make it just right</h3><p>We share a digital draft. You approve it before we begin.</p></div><div class="story-step"><span>03 / MADE BY HAND</span><h3>Ready to be kept</h3><p>Your portrait is threaded, framed, and sent with care.</p></div></div>
+      </div>
+    </section>
+    <section class="section reviews" id="reviews">
+      <div class="wrap"><div class="section-heading"><div><div class="eyebrow">The nicest thing is hearing from you</div><h2>Stories worth keeping.</h2></div><p>Sample review copy for this preview. Replace it with real, permissioned customer reviews before launch.</p></div>
+        <div class="review-grid"><article class="review-card"><div><div class="stars">★★★★★</div><p class="review-text">“My parents cried when they opened it. I don't think any other gift has ever done that.”</p></div><div class="review-person"><div><strong>Ananya R.</strong>Anniversary gift</div><span>Sample</span></div></article><article class="review-card"><div><div class="stars">★★★★★</div><p class="review-text">“The preview process made me feel part of the making. The finished piece is even more beautiful.”</p></div><div class="review-person"><div><strong>Rohan M.</strong>Wedding keepsake</div><span>Sample</span></div></article><article class="review-card"><div><div class="stars">★★★★★</div><p class="review-text">“You can see the care in every thread. It feels like someone made it just for our family.”</p></div><div class="review-person"><div><strong>Meera S.</strong>Family portrait</div><span>Sample</span></div></article></div>
+      </div>
+    </section>
+    <section class="section" id="faq">
+      <div class="wrap faq-grid"><div class="faq-heading"><div class="eyebrow">A few good questions</div><h2>Before you make it yours.</h2><p>Still wondering about something? We’re happy to help make this easy.</p><a class="text-link" href="mailto:hello@craftkiya.com">Write us a note</a></div><div class="faq-list"><div class="faq-item"><button class="faq-question"><span>What kind of photo should I send?</span><span>+</span></button><div class="faq-answer">Choose a well-lit, in-focus photo where the people you want in your portrait are easy to see. A close-up with a simple background usually translates beautifully into thread art.</div></div><div class="faq-item"><button class="faq-question"><span>Do I get to see it before you make it?</span><span>+</span></button><div class="faq-answer">Yes. We prepare a digital draft and share it with you for approval. Your piece only moves into physical making after you’re happy with the preview.</div></div><div class="faq-item"><button class="faq-question"><span>How long does it take?</span><span>+</span></button><div class="faq-answer">Every piece is handmade, so it takes a little time. We’ll share an estimated timeline when your order is confirmed and keep you updated as it moves through each step.</div></div><div class="faq-item"><button class="faq-question"><span>Can I send it as a gift?</span><span>+</span></button><div class="faq-answer">Absolutely. Add a note to your order and we’ll make sure the unboxing feels as special as the piece inside. Delivery is complimentary across India.</div></div></div></div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap"><div class="footer-main"><div class="footer-brand-block"><a class="brand" href="#home"><span class="brand-mark">c</span><span class="brand-name">craftkiya<span>.</span></span></a><p class="footer-note">A small studio for things worth holding onto. Thoughtfully made in India, one thread at a time.</p></div><div><h3>Explore</h3><div class="footer-links"><a href="#collection">The collection</a><a href="#customize">Custom portraits</a><a href="#story">How it’s made</a></div></div><div><h3>Here to help</h3><div class="footer-links"><a href="#faq">FAQs</a><a href="mailto:hello@craftkiya.com">Contact us</a><a href="#faq">Shipping & care</a><a href="studio.html">Studio orders (demo)</a></div></div><div><h3>A note from the studio</h3><p class="newsletter-copy">Occasional good things, delivered gently.</p><form class="newsletter-form" id="newsletterForm"><input type="email" placeholder="Your email address" aria-label="Your email address" required><button aria-label="Subscribe">→</button></form></div></div><div class="footer-bottom"><span>© 2026 Craftkiya Studio. Made with care.</span><span>Handmade in India · For the moments that matter</span></div></div></footer>
+  <div class="drawer-backdrop" id="cartBackdrop" aria-hidden="true"><aside class="cart-drawer" role="dialog" aria-modal="true" aria-label="Your shopping bag"><div class="drawer-head"><h2>Your bag <span id="drawerCount"></span></h2><button class="close-button" id="closeCart" aria-label="Close bag">×</button></div><div class="cart-items" id="cartItems"></div><div class="cart-foot"><div class="cart-total"><span>Subtotal</span><strong id="cartTotal">₹0</strong></div><button class="button" id="checkoutButton">Continue to checkout <span aria-hidden="true">↗</span></button><p class="fine-print">Demo storefront · Checkout is not connected yet</p></div></aside></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="mobile-bar"><div class="mobile-price"><small>From · handmade to order</small><span id="mobilePrice">₹4,900</span></div><button class="button button-clay" id="mobileCustomize">Personalize yours ↗</button></div>
+  <script>
+    (() => {
+      const priceValue = document.getElementById('priceValue');
+      const mobilePrice = document.getElementById('mobilePrice');
+      const bagCount = document.getElementById('bagCount');
+      const cartBackdrop = document.getElementById('cartBackdrop');
+      const cartItems = document.getElementById('cartItems');
+      const money = value => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(value);
+      let selection = { size: '12 x 12 in', frame: 'Charcoal', price: 4900 };
+      let photoData = '';
+      let cart = [];
+      try { cart = JSON.parse(localStorage.getItem('craftkiya-cart') || '[]'); } catch { cart = []; }
+
+      const showToast = message => {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.classList.add('visible');
+        window.clearTimeout(showToast.timeout);
+        showToast.timeout = window.setTimeout(() => toast.classList.remove('visible'), 2600);
+      };
+      const updatePrice = () => {
+        priceValue.textContent = money(selection.price);
+        mobilePrice.textContent = money(selection.price);
+      };
+      document.querySelectorAll('#sizeOptions .option').forEach(button => button.addEventListener('click', () => {
+        document.querySelectorAll('#sizeOptions .option').forEach(option => option.classList.remove('selected'));
+        button.classList.add('selected');
+        selection.size = button.dataset.size;
+        selection.price = Number(button.dataset.price);
+        updatePrice();
+      }));
+      document.querySelectorAll('#frameOptions .option').forEach(button => button.addEventListener('click', () => {
+        document.querySelectorAll('#frameOptions .option').forEach(option => option.classList.remove('selected'));
+        button.classList.add('selected');
+        selection.frame = button.dataset.frame;
+      }));
+
+      const fileInput = document.getElementById('photoInput');
+      const uploadBox = document.getElementById('uploadBox');
+      const handleFile = file => {
+        if (!file) return;
+        if (!file.type.startsWith('image/')) { showToast('Please choose an image file.'); return; }
+        if (file.size > 12 * 1024 * 1024) { showToast('Please choose an image under 12 MB.'); return; }
+        const reader = new FileReader();
+        reader.onload = () => {
+          const source = new Image();
+          source.onload = () => {
+            const scale = Math.min(1, 640 / Math.max(source.naturalWidth, source.naturalHeight));
+            const canvas = document.createElement('canvas');
+            canvas.width = Math.max(1, Math.round(source.naturalWidth * scale));
+            canvas.height = Math.max(1, Math.round(source.naturalHeight * scale));
+            canvas.getContext('2d').drawImage(source, 0, 0, canvas.width, canvas.height);
+            photoData = canvas.toDataURL('image/jpeg', 0.72);
+            const preview = document.getElementById('uploadPreview');
+            preview.src = photoData;
+            preview.style.display = 'block';
+            document.querySelector('.upload-icon').style.display = 'none';
+            document.getElementById('uploadTitle').textContent = file.name;
+            document.getElementById('uploadHelp').textContent = 'Photo selected · You can change it anytime';
+          };
+          source.onerror = () => showToast('This image could not be opened. Please choose another.');
+          source.src = reader.result;
+        };
+        reader.readAsDataURL(file);
+      };
+      fileInput.addEventListener('change', event => handleFile(event.target.files[0]));
+      ['dragenter', 'dragover'].forEach(type => uploadBox.addEventListener(type, event => { event.preventDefault(); uploadBox.classList.add('dragging'); }));
+      ['dragleave', 'drop'].forEach(type => uploadBox.addEventListener(type, event => { event.preventDefault(); uploadBox.classList.remove('dragging'); }));
+      uploadBox.addEventListener('drop', event => handleFile(event.dataTransfer.files[0]));
+
+      const persistCart = () => {
+        try { localStorage.setItem('craftkiya-cart', JSON.stringify(cart)); } catch { showToast('Your browser could not save the bag.'); }
+        renderCart();
+      };
+      const addItem = item => {
+        cart.push({ ...item, id: `${Date.now()}-${Math.random().toString(36).slice(2, 7)}` });
+        persistCart();
+        showToast('A little something added to your bag.');
+      };
+      document.getElementById('addToBag').addEventListener('click', () => {
+        addItem({ name: 'Custom string-art portrait', size: selection.size, frame: selection.frame, price: selection.price, photo: photoData });
+      });
+      document.querySelectorAll('[data-configure]').forEach(button => button.addEventListener('click', () => document.getElementById('customize').scrollIntoView({ behavior: 'smooth' })));
+      const renderCart = () => {
+        bagCount.textContent = cart.length;
+        document.getElementById('drawerCount').textContent = cart.length ? `(${cart.length})` : '';
+        document.getElementById('cartTotal').textContent = money(cart.reduce((sum, item) => sum + item.price, 0));
+        if (!cart.length) {
+          cartItems.innerHTML = '<div class="cart-empty">Your bag is waiting for a story.</div>';
+          return;
+        }
+        cartItems.innerHTML = cart.map(item => `<article class="cart-line"><img class="cart-thumb" src="${item.photo || 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=160&q=70'}" alt=""><div><h3>${item.name}</h3><p>${item.size} · ${item.frame}</p><button class="remove-line" data-remove="${item.id}">Remove</button></div><div class="cart-line-price">${money(item.price)}</div></article>`).join('');
+        cartItems.querySelectorAll('[data-remove]').forEach(button => button.addEventListener('click', () => { cart = cart.filter(item => item.id !== button.dataset.remove); persistCart(); }));
+      };
+      const openCart = () => { cartBackdrop.classList.add('open'); cartBackdrop.setAttribute('aria-hidden', 'false'); document.getElementById('closeCart').focus(); };
+      const closeCart = () => { cartBackdrop.classList.remove('open'); cartBackdrop.setAttribute('aria-hidden', 'true'); };
+      document.getElementById('cartButton').addEventListener('click', openCart);
+      document.getElementById('closeCart').addEventListener('click', closeCart);
+      cartBackdrop.addEventListener('click', event => { if (event.target === cartBackdrop) closeCart(); });
+      document.addEventListener('keydown', event => { if (event.key === 'Escape') closeCart(); });
+      document.getElementById('checkoutButton').addEventListener('click', () => showToast('Checkout will be available when online payments are connected.'));
+      document.getElementById('mobileCustomize').addEventListener('click', () => document.getElementById('customize').scrollIntoView({ behavior: 'smooth' }));
+      document.getElementById('menuButton').addEventListener('click', () => document.getElementById('siteNav').classList.toggle('open'));
+      document.querySelectorAll('#siteNav a').forEach(link => link.addEventListener('click', () => document.getElementById('siteNav').classList.remove('open')));
+      document.querySelectorAll('.faq-question').forEach(button => button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        item.classList.toggle('open');
+        button.lastElementChild.textContent = item.classList.contains('open') ? '−' : '+';
+      }));
+      document.getElementById('newsletterForm').addEventListener('submit', event => { event.preventDefault(); showToast('Thanks for stopping by. Email signup is coming soon.'); event.currentTarget.reset(); });
+      renderCart();
+      updatePrice();
+    })();
+  </script>
+</body>
+</html>

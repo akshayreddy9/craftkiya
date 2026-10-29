@@ -1,0 +1,8 @@
+node_modules
+.next
+.next-craftkiya
+.env*
+!.env.example
+legacy-preview
+.mcp.json
+*.tsbuildinfo

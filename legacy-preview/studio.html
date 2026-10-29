@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f3eb">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Studio | Craftkiya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --paper:#f6f3eb; --white:#fffefa; --ink:#20231f; --muted:#73756d; --line:#dedbd1; --green:#364d3d; --clay:#b65f46; --serif:"Playfair Display",Georgia,serif; --sans:"DM Sans","Segoe UI",sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--paper); font:14px/1.5 var(--sans); }
+    button,input,select { font:inherit; }
+    .top { min-height:72px; border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; padding:0 clamp(18px,5vw,68px); background:var(--white); }
+    .brand { display:flex; align-items:center; gap:9px; color:var(--ink); text-decoration:none; font:22px var(--serif); }
+    .brand-mark { width:32px; height:32px; border:1px solid var(--green); color:var(--green); border-radius:50%; display:grid; place-items:center; }
+    .brand span:last-child em { color:var(--clay); font-style:normal; }
+    .top a.back { color:var(--green); font-size:12px; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:3px; }
+    .main { width:min(1220px,calc(100% - 40px)); margin:42px auto 80px; }
+    .kicker { color:var(--green); text-transform:uppercase; font-weight:700; font-size:10px; letter-spacing:.16em; }
+    h1 { margin:9px 0 7px; font:500 40px/1.15 var(--serif); }
+    .intro { color:var(--muted); font-size:12px; margin:0 0 26px; }
+    .notice { padding:13px 15px; border-left:3px solid #c38a59; background:#f0e9dc; color:#514d42; font-size:11px; line-height:1.6; margin-bottom:22px; }
+    .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:25px; }
+    .stat { border:1px solid var(--line); padding:17px 19px; background:var(--white); }
+    .stat span { color:var(--muted); display:block; font-size:10px; text-transform:uppercase; letter-spacing:.1em; }
+    .stat strong { display:block; font:26px var(--serif); margin-top:4px; }
+    .queue-head { display:flex; justify-content:space-between; align-items:center; gap:14px; margin:30px 0 12px; }
+    h2 { font:500 24px var(--serif); margin:0; }
+    .queue-head span { color:var(--muted); font-size:11px; }
+    .orders { display:grid; gap:12px; }
+    .order { background:var(--white); border:1px solid var(--line); }
+    .order-main { display:grid; grid-template-columns:1.1fr 1.1fr 1fr auto; align-items:center; gap:15px; padding:18px 20px; }
+    .order-id { font-size:10px; color:var(--muted); }
+    .customer { font-weight:600; font-size:13px; }
+    .customer small { display:block; font-weight:400; color:var(--muted); font-size:10px; margin-top:3px; }
+    .item-name { font:17px var(--serif); }
+    .item-detail { font-size:10px; color:var(--muted); }
+    .badge { display:inline-block; padding:5px 8px; background:#e9eee7; color:var(--green); font-size:9px; }
+    .order-toggle { border:1px solid var(--line); background:transparent; padding:8px 11px; cursor:pointer; font-size:10px; }
+    .order-detail { display:none; border-top:1px solid var(--line); padding:19px 20px 21px; grid-template-columns:1fr 1fr 1fr; gap:20px; }
+    .order.expanded .order-detail { display:grid; }
+    .field label { display:block; color:var(--muted); font-size:9px; text-transform:uppercase; letter-spacing:.1em; margin-bottom:6px; }
+    .field select,.field input { width:100%; min-height:39px; padding:8px 10px; color:var(--ink); background:var(--white); border:1px solid var(--line); outline-color:var(--green); font-size:11px; }
+    .field input[type="file"] { padding:6px; }
+    .detail-actions { display:flex; align-items:end; gap:9px; }
+    .action { min-height:39px; padding:0 13px; color:white; background:var(--green); border:1px solid var(--green); cursor:pointer; font-size:10px; }
+    .action:hover { background:#25372c; }
+    .action.secondary { color:var(--green); background:transparent; }
+    .preview-note { grid-column:1/-1; margin:0; color:var(--muted); font-size:10px; }
+    .empty { color:var(--muted); background:var(--white); border:1px solid var(--line); padding:35px; text-align:center; font:19px var(--serif); }
+    .toast { position:fixed; z-index:2; bottom:20px; left:50%; transform:translate(-50%,15px); opacity:0; background:#25372c; color:white; padding:11px 16px; font-size:11px; transition:.2s; pointer-events:none; }
+    .toast.show { transform:translate(-50%,0); opacity:1; }
+    @media(max-width:700px) { .main { margin-top:28px; } h1 { font-size:34px; } .stats { gap:7px; } .stat { padding:13px 11px; } .stat strong { font-size:21px; } .stat span { font-size:8px; } .order-main { grid-template-columns:1fr 1fr; gap:12px; padding:15px; } .order-main > :nth-child(2) { grid-column:1; grid-row:2; } .order-main > :nth-child(3) { grid-column:2; grid-row:1; } .order-toggle { grid-column:2; grid-row:2; justify-self:end; } .order-detail { grid-template-columns:1fr; gap:12px; padding:15px; } .preview-note { grid-column:auto; } .queue-head { align-items:start; flex-direction:column; } }
+  </style>
+</head>
+<body>
+  <header class="top"><a class="brand" href="index.html"><span class="brand-mark">c</span><span>craftkiya<em>.</em></span></a><a class="back" href="index.html">← Back to storefront</a></header>
+  <main class="main">
+    <div class="kicker">The maker's desk</div>
+    <h1>Order studio</h1>
+    <p class="intro">A simple place to keep each portrait moving, from first hello to the front door.</p>
+    <div class="notice"><strong>Local demo only.</strong> This page is not password-protected and saves changes only in this browser. Do not use it for real customer data. A live admin needs server-side sign-in, a database, private image storage, and email delivery.</div>
+    <section class="stats" aria-label="Order summary"><div class="stat"><span>In the studio</span><strong id="activeCount">0</strong></div><div class="stat"><span>Awaiting your preview</span><strong id="previewCount">0</strong></div><div class="stat"><span>Ready to send</span><strong id="dispatchCount">0</strong></div></section>
+    <div class="queue-head"><h2>Recent orders</h2><span>Sample orders · edit the status to try the workflow</span></div>
+    <div class="orders" id="orders"></div>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+    (() => {
+      const initialOrders = [
+        { id:'CK-1048', customer:'Aarav Mehta', email:'aarav@example.com', item:'The family portrait', variant:'18 × 18 in · Warm teak', status:'draft_prepared', awb:'', proof:'' },
+        { id:'CK-1047', customer:'Nisha Kapoor', email:'nisha@example.com', item:'The two of us', variant:'12 × 12 in · Charcoal', status:'in_production', awb:'', proof:'' },
+        { id:'CK-1046', customer:'Diya Shah', email:'diya@example.com', item:'The family portrait', variant:'18 × 24 in · Natural pine', status:'dispatched', awb:'', proof:'' }
+      ];
+      const statusLabels = { confirmed:'Order confirmed', draft_prepared:'Preview ready', preview_approved:'Preview approved', in_production:'In the studio', dispatched:'Dispatched', delivered:'Delivered' };
+      let orders;
+      try { orders = JSON.parse(localStorage.getItem('craftkiya-studio-orders') || 'null') || initialOrders; } catch { orders = initialOrders; }
+      const toast = message => {
+        const node = document.getElementById('toast');
+        node.textContent = message;
+        node.classList.add('show');
+        clearTimeout(toast.timer);
+        toast.timer = setTimeout(() => node.classList.remove('show'), 2600);
+      };
+      const save = () => {
+        try { localStorage.setItem('craftkiya-studio-orders', JSON.stringify(orders)); } catch { toast('Changes could not be saved in this browser.'); }
+        render();
+      };
+      const render = () => {
+        document.getElementById('activeCount').textContent = orders.filter(order => !['delivered'].includes(order.status)).length;
+        document.getElementById('previewCount').textContent = orders.filter(order => order.status === 'draft_prepared').length;
+        document.getElementById('dispatchCount').textContent = orders.filter(order => order.status === 'in_production').length;
+        const root = document.getElementById('orders');
+        if (!orders.length) { root.innerHTML = '<div class="empty">No orders in the studio yet.</div>'; return; }
+        root.replaceChildren(...orders.map(order => {
+          const article = document.createElement('article');
+          article.className = 'order';
+          article.dataset.id = order.id;
+          const main = document.createElement('div');
+          main.className = 'order-main';
+          const identity = document.createElement('div');
+          const orderId = document.createElement('div'); orderId.className = 'order-id'; orderId.textContent = order.id;
+          const customer = document.createElement('div'); customer.className = 'customer'; customer.textContent = order.customer;
+          const email = document.createElement('small'); email.textContent = order.email; customer.append(email); identity.append(orderId, customer);
+          const item = document.createElement('div'); const itemName = document.createElement('div'); itemName.className='item-name'; itemName.textContent=order.item; const detail=document.createElement('div'); detail.className='item-detail'; detail.textContent=order.variant; item.append(itemName,detail);
+          const badge = document.createElement('span'); badge.className='badge'; badge.textContent=statusLabels[order.status] || statusLabels.confirmed;
+          const toggle=document.createElement('button'); toggle.type='button'; toggle.className='order-toggle'; toggle.textContent='Manage order';
+          main.append(identity,item,badge,toggle);
+          const panel=document.createElement('div'); panel.className='order-detail';
+          const statusField=document.createElement('div'); statusField.className='field'; const statusLabel=document.createElement('label'); statusLabel.textContent='Order progress'; const status=document.createElement('select'); status.dataset.field='status';
+          Object.entries(statusLabels).forEach(([value,label])=>{ const option=document.createElement('option'); option.value=value; option.textContent=label; option.selected=value===order.status; status.append(option); }); statusField.append(statusLabel,status);
+          const awbField=document.createElement('div'); awbField.className='field'; const awbLabel=document.createElement('label'); awbLabel.textContent='Courier tracking number'; const awb=document.createElement('input'); awb.type='text'; awb.placeholder='Add AWB when dispatched'; awb.value=order.awb || ''; awb.dataset.field='awb'; awbField.append(awbLabel,awb);
+          const proofField=document.createElement('div'); proofField.className='field'; const proofLabel=document.createElement('label'); proofLabel.textContent='Preview proof image'; const proof=document.createElement('input'); proof.type='file'; proof.accept='image/*'; proof.dataset.field='proof'; proofField.append(proofLabel,proof);
+          const actions=document.createElement('div'); actions.className='detail-actions'; const saveButton=document.createElement('button'); saveButton.type='button'; saveButton.className='action'; saveButton.dataset.action='save'; saveButton.textContent='Save updates'; const emailButton=document.createElement('button'); emailButton.type='button'; emailButton.className='action secondary'; emailButton.dataset.action='email'; emailButton.textContent='Request approval'; actions.append(saveButton,emailButton);
+          const proofNote=document.createElement('p'); proofNote.className='preview-note'; proofNote.textContent=order.proof ? `Preview selected: ${order.proof}` : 'Preview approval email is a demo. Email delivery and secure uploads are not connected.';
+          panel.append(statusField,awbField,proofField,actions,proofNote);
+          toggle.addEventListener('click',()=>article.classList.toggle('expanded'));
+          saveButton.addEventListener('click',()=>updateOrder(order.id,panel,false));
+          emailButton.addEventListener('click',()=>updateOrder(order.id,panel,true));
+          article.append(main,panel);
+          return article;
+        }));
+      };
+      const updateOrder = (id,panel,requestApproval) => {
+        const order=orders.find(item=>item.id===id);
+        if(!order) return;
+        order.status=panel.querySelector('[data-field="status"]').value;
+        order.awb=panel.querySelector('[data-field="awb"]').value.trim();
+        const file=panel.querySelector('[data-field="proof"]').files[0];
+        if(file) order.proof=file.name;
+        save();
+        toast(requestApproval ? 'Saved locally. Approval email is not connected yet.' : 'Order updates saved in this browser.');
+      };
+      render();
+    })();
+  </script>
+</body>
+</html>
